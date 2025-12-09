@@ -1,8 +1,7 @@
 # Dataset Distillation for the Pre-Training Era: Cross-Model Generalization via Linear Gradient Matching
 
-**[Metanthropic](https://metanthropic.vercel.app/)** $^*$, **[Ekjot Singh](https://www.linkedin.com/in/ekjot-singh-153110268/)** $^*$
+**[Metanthropic](https://metanthropic.vercel.app/)**, **[Ekjot Singh](https://www.linkedin.com/in/ekjot-singh-153110268/)**
 <br>
-<small>*Equal Contribution</small>
 
 [**[Project Page]**](https://metanthropic.vercel.app/) | [**[Paper]**](https://arxiv.org/abs/YOUR_ARXIV_ID) | [**[Code]**](https://github.com/metanthropics/DDPTECMGLGM)
 
@@ -30,7 +29,7 @@ This repository contains the source code for the project website. To preview it 
 
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/metanthropics/DDPTECMGLGM-website.git](https://github.com/metanthropics/DDPTECMGLGM-website.git)
+   git clone https://github.com/metanthropics/DDPTECMGLGM-website.git
    ```
 2. Navigate to the directory and start a local server (using Python 3):
     ``` bash
