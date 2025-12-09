@@ -1,80 +1,51 @@
-# Academic Project Page Template
+# Dataset Distillation for the Pre-Training Era: Cross-Model Generalization via Linear Gradient Matching
 
-> **Update (September 2025)**: This template has been modernized with better design, SEO, and mobile support. For the original version, see the [original-version branch](https://github.com/eliahuhorwitz/Academic-project-page-template/tree/original-version).
+**[Metanthropic](https://metanthropic.vercel.app/)** $^*$, **[Ekjot Singh](https://www.linkedin.com/in/ekjot-singh-153110268/)** $^*$
+<br>
+<small>*Equal Contribution</small>
 
-A clean, responsive template for academic project pages.
+[**[Project Page]**](https://metanthropic.vercel.app/) | [**[Paper]**](https://arxiv.org/abs/YOUR_ARXIV_ID) | [**[Code]**](https://github.com/metanthropics/DDPTECMGLGM)
 
+---
 
-Example project pages built using this template are:
-- https://horwitz.ai/probex
-- https://vision.huji.ac.il/probegen
-- https://horwitz.ai/mother
-- https://horwitz.ai/spectral_detuning
-- https://vision.huji.ac.il/ladeda
-- https://vision.huji.ac.il/dsire
-- https://horwitz.ai/podd
-- https://dreamix-video-editing.github.io
-- https://horwitz.ai/conffusion
-- https://horwitz.ai/3d_ads/
-- https://vision.huji.ac.il/ssrl_ad
-- https://vision.huji.ac.il/deepsim
+## Abstract
 
+The standard formulation of Dataset Distillation targets the synthesis of compact, synthetic datasets capable of training models from scratch. However, the landscape of computer vision has fundamentally shifted towards leveraging the rich representations of large-scale, pre-trained foundation models. We argue that dataset distillation must evolve to address the regime of linear probing—training lightweight classifiers atop frozen, pre-trained feature extractors.
 
+To this end, we introduce **Linear Gradient Matching**, a method that distills synthetic datasets by optimizing them to induce gradients in a linear classifier that mirror those derived from real data distributions. We demonstrate that a single synthetic image per class is sufficient to train linear probes that not only achieve competitive performance across a diverse array of vision backbones (CLIP, DINO-v2, EVA-02, MoCo-v3) but consistently outperform baselines constructed from real images.
 
-## Start using the template
-To start using the template click on `Use this Template`.
+Motivated by the **Platonic Representation Hypothesis**, we further investigate the transferability of these distilled datasets. We introduce differentiable augmentations and a multi-scale pyramid parameterization that unlock robust cross-model generalization. Beyond efficiency, our experiments confirm that Linear Gradient Matching serves as a potent diagnostic tool for analyzing the embedding structure, alignment, and robustness of modern vision representations.
 
-The template uses html for controlling the content and css for controlling the style. 
-To edit the websites contents edit the `index.html` file. It contains different HTML "building blocks", use whichever ones you need and comment out the rest.  
+## Method
 
-**IMPORTANT!** Make sure to replace the `favicon.ico` under `static/images/` with one of your own, otherwise your favicon is going to be a dreambooth image of me.
+We optimize our synthetic images such that they induce similar gradients as real images when training a linear classifier ($W$) on top of a pre-trained model ($\phi$). To do this, we perform a bi-level optimization by finding the cosine distance between the real and synthetic gradients and back-propagating through the initial gradient calculation all the way to the synthetic images themselves.
 
-## What's New
+<p align="center">
+  <img src="static/images/linear_dd.png" alt="Linear Gradient Matching Method" width="80%">
+</p>
 
-- Modern, clean design with better mobile support
-- Improved SEO with proper meta tags and structured data
-- Performance improvements (lazy loading, optimized assets)
-- More Works dropdown
-- Copy button for BibTeX citations
-- Better accessibility
+## Running the Website Locally
 
-## Components
+This repository contains the source code for the project website. To preview it locally:
 
-- Teaser video
-- Image carousel
-- YouTube video embedding
-- Video carousel
-- PDF poster viewer
-- BibTeX citation
+1. Clone the repository:
+   ```bash
+   git clone [https://github.com/metanthropics/DDPTECMGLGM-website.git](https://github.com/metanthropics/DDPTECMGLGM-website.git)
+   ```
+2. Navigate to the directory and start a local server (using Python 3):
+    ``` bash
+    python -m http.server 8000
+    ```
+3. Open http://localhost:8000 in your web browser.
 
-## Customization
+## Citation
+If you find this work or our distilled datasets useful, please cite our paper:
 
-The HTML file has TODO comments showing what to replace:
-
-- Paper title, authors, institution, conference
-- Links (arXiv, GitHub, etc.)
-- Abstract and descriptions  
-- Videos, images, and PDFs
-- Related works in the dropdown
-- Meta tags for SEO and social sharing
-
-### Meta Tags
-The template includes meta tags for better search engine visibility and social media sharing. These appear in the `<head>` section and help with:
-- Google Scholar indexing
-- Social media previews (Twitter, Facebook, LinkedIn)
-- Search engine optimization
-
-Create a 1200x630px social preview image at `static/images/social_preview.png`.
-
-## Tips
-
-- Compress images with [TinyPNG](https://tinypng.com)
-- Use YouTube for large videos (>10MB)  
-- Replace the favicon in `static/images/`
-- Works with GitHub Pages
-
-## Acknowledgments
-Parts of this project page were adopted from the [Nerfies](https://nerfies.github.io/) page.
-
-## Website License
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+```
+@inproceedings{metanthropic2025lineargradmatch,
+  title={Dataset Distillation for the Pre-Training Era: Cross-Model Generalization via Linear Gradient Matching.},
+  author={Metanthropic and Ekjot Singh},
+  year={2025},
+  url={[https://metanthropic.vercel.app/](https://metanthropic.vercel.app/)}
+}
+```
