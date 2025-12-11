@@ -3,7 +3,7 @@
 **[Metanthropic](https://metanthropic.vercel.app/)**, **[Ekjot Singh](https://www.linkedin.com/in/ekjot-singh-153110268/)**
 <br>
 
-[**[Project Page]**](https://metanthropic.vercel.app/) | [**[Paper]**](https://arxiv.org/abs/YOUR_ARXIV_ID) | [**[Code]**](https://github.com/metanthropics/DDPTECMGLGM)
+[**[Project Page]**](https://metanthropics.github.io/DDPTECMGLGM-website/) | [**[Paper]**](https://arxiv.org/abs/YOUR_ARXIV_ID) | [**[Code]**](https://github.com/metanthropics/DDPTECMGLGM)
 
 ---
 
