@@ -1,250 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <meta name="title" content="Dataset Distillation for the Pre-Training Era - Metanthropics & Ekjot Singh">
-        <meta name="description" content="We introduce Linear Gradient Matching, a method that distills synthetic datasets by optimizing them to induce gradients in a linear classifier that mirror those derived from real data distributions.">
-        <meta name="keywords" content="Dataset Distillation, Linear Gradient Matching, Foundation Models, Computer Vision, AI, Machine Learning, DINO-v2, CLIP">
-        <meta name="author" content="Metanthropics, Ekjot Singh">
-        <meta name="robots" content="index, follow">
-        <meta name="language" content="English">
+    <meta name="title" content="Dataset Distillation for the Pre-Training Era - Metanthropics & Ekjot Singh">
+    <meta name="description" content="We introduce Linear Gradient Matching, a method that distills synthetic datasets by optimizing them to induce gradients in a linear classifier that mirror those derived from real data distributions.">
+    <meta name="keywords" content="Dataset Distillation, Linear Gradient Matching, Foundation Models, Computer Vision, AI, Machine Learning, DINO-v2, CLIP">
+    <meta name="author" content="Metanthropics, Ekjot Singh">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
 
-        <meta property="og:type" content="article">
-        <meta property="og:site_name" content="Metanthropic">
-        <meta property="og:title" content="Dataset Distillation for the Pre-Training Era: Cross-Model Generalization via Linear Gradient Matching">
-        <meta property="og:description" content="We introduce Linear Gradient Matching, a method that distills synthetic datasets by optimizing them to induce gradients in a linear classifier that mirror those derived from real data distributions.">
-        <meta property="og:url" content="https://metanthropic.vercel.app/YOUR_PROJECT_PAGE">
-        <meta property="og:image" content="static/images/social_preview.png">
-        <meta property="og:image:width" content="1200">
-        <meta property="og:image:height" content="630">
-        <meta property="og:image:alt" content="Dataset Distillation Research Preview">
-        <meta property="article:published_time" content="2025-01-01T00:00:00.000Z">
-        <meta property="article:author" content="Metanthropics">
-        <meta property="article:section" content="Research">
-        <meta property="article:tag" content="Dataset Distillation">
-        <meta property="article:tag" content="Computer Vision">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Metanthropic">
+    <meta property="og:title" content="Dataset Distillation for the Pre-Training Era: Cross-Model Generalization via Linear Gradient Matching">
+    <meta property="og:description" content="We introduce Linear Gradient Matching, a method that distills synthetic datasets by optimizing them to induce gradients in a linear classifier that mirror those derived from real data distributions.">
+    <meta property="og:url" content="https://metanthropic.vercel.app/research/dataset-distillation">
+    <meta property="og:image" content="static/images/social_preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Dataset Distillation Research Preview">
+    <meta property="article:published_time" content="2025-12-17T00:00:00.000Z">
+    <meta property="article:author" content="Metanthropics">
+    <meta property="article:section" content="Research">
+    <meta property="article:tag" content="Dataset Distillation">
+    <meta property="article:tag" content="Computer Vision">
 
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:site" content="@ek10sh">
-        <meta name="twitter:creator" content="@ek10sh">
-        <meta name="twitter:title" content="Dataset Distillation for the Pre-Training Era">
-        <meta name="twitter:description" content="We introduce Linear Gradient Matching, a method that distills synthetic datasets by optimizing them to induce gradients in a linear classifier.">
-        <meta name="twitter:image" content="static/images/social_preview.png">
-        <meta name="twitter:image:alt" content="Research Preview">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@ek10sh">
+    <meta name="twitter:creator" content="@ek10sh">
+    <meta name="twitter:title" content="Dataset Distillation for the Pre-Training Era">
+    <meta name="twitter:description" content="We introduce Linear Gradient Matching, a method that distills synthetic datasets by optimizing them to induce gradients in a linear classifier.">
+    <meta name="twitter:image" content="static/images/social_preview.png">
 
-        <meta name="citation_title" content="Dataset Distillation for the Pre-Training Era: Cross-Model Generalization via Linear Gradient Matching">
-        <meta name="citation_author" content="Metanthropics">
-        <meta name="citation_author" content="Singh, Ekjot">
-        <meta name="citation_publication_date" content="2025">
-        <meta name="citation_conference_title" content="Conference Name">
-        <meta name="citation_pdf_url" content="static/pdfs/paper.pdf">
+    <meta name="citation_title" content="Dataset Distillation for the Pre-Training Era: Cross-Model Generalization via Linear Gradient Matching">
+    <meta name="citation_author" content="Metanthropics">
+    <meta name="citation_author" content="Singh, Ekjot">
+    <meta name="citation_publication_date" content="2025">
+    <meta name="citation_pdf_url" content="https://metanthropic.vercel.app/papers/dataset-distillation.pdf">
 
-        <meta name="theme-color" content="#2563eb">
-        <meta name="msapplication-TileColor" content="#2563eb">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="msapplication-TileColor" content="#2563eb">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="preconnect" href="https://ajax.googleapis.com">
-        <link rel="preconnect" href="https://documentcloud.adobe.com">
-        <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <title>Dataset Distillation for the Pre-Training Era - Metanthropics & Ekjot Singh</title>
 
-        <title>Dataset Distillation for the Pre-Training Era - Metanthropics & Ekjot Singh</title>
+    <link rel="icon" type="image/x-icon" href="static/images/main-logo-small.png">
 
-        <link rel="icon" type="image/x-icon" href="static/images/main-logo-small.png">
-        <link rel="apple-touch-icon" href="static/images/favicon.ico">
+    <link rel="stylesheet" href="static/css/bulma.min.css">
+    <link rel="stylesheet" href="static/css/index.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
 
-        <link rel="stylesheet" href="static/css/bulma.min.css">
-        <link rel="stylesheet" href="static/css/index.css">
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="static/js/fontawesome.all.min.js"></script>
+    <script defer src="static/js/bulma-carousel.min.js"></script>
+    <script defer src="static/js/bulma-slider.min.js"></script>
+    <script defer src="static/js/index.js"></script>
 
-        <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-
-        <noscript>
-            <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-            <link rel="stylesheet" href="static/css/bulma-slider.min.css">
-            <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-        </noscript>
-
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-        <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-        <script defer src="static/js/fontawesome.all.min.js"></script>
-        <script defer src="static/js/bulma-carousel.min.js"></script>
-        <script defer src="static/js/bulma-slider.min.js"></script>
-        <script defer src="static/js/index.js"></script>
-
-        <script type="application/ld+json">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ScholarlyArticle",
+      "headline": "Dataset Distillation for the Pre-Training Era: Cross-Model Generalization via Linear Gradient Matching",
+      "description": "We introduce Linear Gradient Matching, a method that distills synthetic datasets by optimizing them to induce gradients in a linear classifier that mirror those derived from real data distributions.",
+      "author": [
         {
-        "@context": "https://schema.org",
-        "@type": "ScholarlyArticle",
-        "headline": "Dataset Distillation for the Pre-Training Era: Cross-Model Generalization via Linear Gradient Matching",
-        "description": "We introduce Linear Gradient Matching, a method that distills synthetic datasets by optimizing them to induce gradients in a linear classifier that mirror those derived from real data distributions.",
-        "author": [
-        {
-        "@type": "Person",
-        "name": "Metanthropics",
-        "affiliation": {
-        "@type": "Organization",
-        "name": "Metanthropic"
-        }
+          "@type": "Person",
+          "name": "Metanthropics",
+          "affiliation": { "@type": "Organization", "name": "Metanthropic" }
         },
         {
-        "@type": "Person",
-        "name": "Ekjot Singh",
-        "affiliation": {
-        "@type": "Organization",
-        "name": "Metanthropic"
+          "@type": "Person",
+          "name": "Ekjot Singh",
+          "affiliation": { "@type": "Organization", "name": "Metanthropic" }
         }
-        }
-        ],
-        "datePublished": "2025-12-10",
-        "publisher": {
-        "@type": "Organization",
-        "name": "Metanthropic"
-        },
-        "url": "https://metanthropic.vercel.app/YOUR_PROJECT_PAGE",
-        "image": "static/images/social_preview.png",
-        "keywords": ["Dataset Distillation", "Linear Gradient Matching", "Foundation Models", "machine learning", "computer vision"],
-        "abstract": "The standard formulation of Dataset Distillation targets the synthesis of compact, synthetic datasets capable of training models from scratch. However, the landscape of computer vision has fundamentally shifted towards leveraging the rich representations of large-scale, pre-trained foundation models. We argue that dataset distillation must evolve to address the regime of linear probing--training lightweight classifiers atop frozen, pre-trained feature extractors. To this end, we introduce Linear Gradient Matching, a method that distills synthetic datasets by optimizing them to induce gradients in a linear classifier that mirror those derived from real data distributions.",
-        "citation": "@inproceedings{metanthropic2025lineargradmatch, title={Dataset Distillation for the Pre-Training Era: Cross-Model Generalization via Linear Gradient Matching.}, author={Metanthropic and Ekjot Singh}, year={2025}}",
-        "isAccessibleForFree": true,
-        "license": "https://creativecommons.org/licenses/by/4.0/",
-        "mainEntity": {
-        "@type": "WebPage",
-        "@id": "https://metanthropic.vercel.app/YOUR_PROJECT_PAGE"
-        },
-        "about": [
-        {
-        "@type": "Thing",
-        "name": "Computer Vision"
-        },
-        {
-        "@type": "Thing",
-        "name": "Dataset Distillation"
-        }
-        ]
-        }
-        </script>
+      ],
+      "datePublished": "2025-12-17",
+      "publisher": { "@type": "Organization", "name": "Metanthropic" },
+      "url": "https://metanthropic.vercel.app/research/dataset-distillation",
+      "image": "static/images/social_preview.png",
+      "keywords": ["Dataset Distillation", "Linear Gradient Matching", "Foundation Models", "machine learning", "computer vision"],
+      "isAccessibleForFree": true,
+      "license": "https://creativecommons.org/licenses/by/4.0/"
+    }
+    </script>
+</head>
+<body>
 
-        <script type="application/ld+json">
-        {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Metanthropic",
-        "url": "https://metanthropic.vercel.app",
-        "logo": "static/images/favicon.ico",
-        "sameAs": [
-        "https://twitter.com/ek10sh",
-        "https://github.com/metanthropics"
-        ]
-        }
-        </script>
-    </head>
-    <body>
+    <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
-
-        <!-- Scroll to Top Button -->
-        <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
-            <i class="fas fa-chevron-up"></i>
+    <div class="more-works-container">
+        <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
+            <i class="fas fa-flask"></i>
+            More Works
+            <i class="fas fa-chevron-down dropdown-arrow"></i>
         </button>
-
-        <!-- More Works Dropdown -->
-        <div class="more-works-container">
-            <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
-                <i class="fas fa-flask"></i>
-                More Works
-                <i class="fas fa-chevron-down dropdown-arrow"></i>
-            </button>
-            <div class="more-works-dropdown" id="moreWorksDropdown">
-                <div class="dropdown-header">
-                    <h4>More Works from Our Lab</h4>
-                    <button class="close-btn" onclick="toggleMoreWorks()">
-                        <i class="fas fa-times"></i>
-                    </button>
-                </div>
-                <div class="works-list">
-                    <!-- TODO: Replace with your lab's related works -->
-                    <a href="https://metanthropic.vercel.app/" class="work-item" target="_blank">
-                        <div class="work-info">
-                            <h5>Metanthropic Research</h5>
-                            <p>Visit our research group website and blog.</p>
-                        </div>
-                        <i class="fas fa-globe"></i>
-                    </a>
-                    <!-- TODO: Add more related works or remove extra items -->
-                    <a href="https://github.com/metanthropics" class="work-item" target="_blank">
-                        <div class="work-info">
-                            <h5>GitHub</h5>
-                            <p>Check out our open-source code and other projects.</p>
-                        </div>
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/company/metanthropic" class="work-item" target="_blank">
-                        <div class="work-info">
-                            <h5>Metanthropic LinkedIn</h5>
-                            <p>Follow Metanthropic on LinkedIn.</p>
-                        </div>
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/ekjot-singh-153110268/" class="work-item" target="_blank">
-                        <div class="work-info">
-                            <h5>Ekjot LinkedIn</h5>
-                            <p>Connect with Ekjot Singh on LinkedIn.</p>
-                        </div>
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                </div>
+        <div class="more-works-dropdown" id="moreWorksDropdown">
+            <div class="dropdown-header">
+                <h4>More Works from Our Lab</h4>
+                <button class="close-btn" onclick="toggleMoreWorks()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="works-list">
+                <a href="https://metanthropic.vercel.app/" class="work-item" target="_blank">
+                    <div class="work-info">
+                        <h5>Metanthropic Research</h5>
+                        <p>Visit our research group website and blog.</p>
+                    </div>
+                    <i class="fas fa-globe"></i>
+                </a>
+                <a href="https://github.com/metanthropics" class="work-item" target="_blank">
+                    <div class="work-info">
+                        <h5>GitHub</h5>
+                        <p>Check out our open-source code and other projects.</p>
+                    </div>
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/metanthropic" class="work-item" target="_blank">
+                    <div class="work-info">
+                        <h5>Metanthropic LinkedIn</h5>
+                        <p>Follow Metanthropic on LinkedIn.</p>
+                    </div>
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/ekjot-singh-153110268/" class="work-item" target="_blank">
+                    <div class="work-info">
+                        <h5>Ekjot LinkedIn</h5>
+                        <p>Connect with Ekjot Singh on LinkedIn.</p>
+                    </div>
+                    <i class="fab fa-linkedin"></i>
+                </a>
             </div>
         </div>
+    </div>
 
-        <main id="main-content">
-            <section class="hero">
-                <div class="hero-body">
-                    <div class="container is-max-desktop">
-                        <div class="columns is-centered">
+    <main id="main-content">
+        <section class="hero">
+            <div class="hero-body">
+                <div class="container is-max-desktop">
+                    <div class="columns is-centered">
+                        <div class="column has-text-centered">
+                            <h1 class="title is-1 publication-title">Dataset Distillation for the Pre-Training Era: Cross-Model Generalization via Linear Gradient Matching.</h1>
+
+                            <div class="is-size-5 publication-authors">
+                                <span class="author-block">
+                                    <a href="https://metanthropic.vercel.app/" target="_blank">Metanthropic</a><sup>*</sup>,
+                                </span>
+                                <span class="author-block">
+                                    <a href="https://www.linkedin.com/in/ekjot-singh-153110268/" target="_blank">Ekjot Singh</a><sup>*</sup>
+                                </span>
+                            </div>
+
+                            <div class="is-size-5 publication-authors">
+                                <span class="author-block">Metanthropic Research<br>2025</span>
+                                <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                            </div>
+
                             <div class="column has-text-centered">
-                                <!-- TODO: Replace with your paper title -->
-                                <h1 class="title is-1 publication-title">Dataset Distillation for the Pre-Training Era: Cross-Model Generalization via Linear Gradient Matching.</h1>
-                                <div class="is-size-5 publication-authors">
-                                    <!-- TODO: Replace with your paper authors and their personal links -->
-                                    <span class="author-block">
-                                        <a href="https://metanthropic.vercel.app/" target="_blank">Metanthropic</a><sup>*</sup>,</span>
-                                    <span class="author-block">
-                                        <a href="https://www.linkedin.com/in/ekjot-singh-153110268/" target="_blank">Ekjot Singh</a><sup>*</sup>,</span>
-                                    <span class="author-block">
+                                <div class="publication-links">
+
+                                    <span class="link-block">
+                                        <a href="https://metanthropic.vercel.app/" target="_blank"
+                                            class="external-link button is-normal is-rounded is-dark">
+                                            <span class="icon">
+                                                <i class="fas fa-globe"></i>
+                                            </span>
+                                            <span>Metanthropic</span>
+                                        </a>
                                     </span>
-                                </div>
 
-                                <div class="is-size-5 publication-authors">
-                                    <!-- TODO: Replace with your institution and conference/journal info -->
-                                    <span class="author-block">Metanthropic Research<br>2025</span>
-                                    <!-- TODO: Remove this line if no equal contribution -->
-                                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
-                                </div>
+                                    <span class="link-block">
+                                        <a href="https://metanthropic.vercel.app/papers/dataset-distillation.pdf" target="_blank"
+                                            class="external-link button is-normal is-rounded is-dark">
+                                            <span class="icon">
+                                                <i class="fas fa-file-pdf"></i>
+                                            </span>
+                                            <span>Paper</span>
+                                        </a>
+                                    </span>
 
-                                <div class="column has-text-centered">
-                                    <div class="publication-links">
-                                        <!-- TODO: Update with your arXiv paper ID -->
-                                        <span class="link-block">
-                                            <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                                                class="external-link button is-normal is-rounded is-dark">
-                                                <span class="icon">
-                                                    <i class="fas fa-file-pdf"></i>
-                                                </span>
-                                                <span>Paper</span>
-                                            </a>
-                                        </span>
-
-                                        <!-- TODO: Add your supplementary material PDF or remove this section -->
-                                        <span class="link-block">
+                                    <span class="link-block">
+                                        <a href="https://github.com/metanthropics/DDPTECMGLGM" target="_blank"
+                                            class="external-link button is-normal is-rounded is-dark">
+                                            <span class="icon">
+                                                <i class="fab fa-github"></i>
+                                            </span>
+                                            <span>Code</span>
+                                        </a>
+                                    </span>
+                                    <span class="link-block">
                                             <a href="static/pdfs/paper.pdf" target="_blank"
                                                 class="external-link button is-normal is-rounded is-dark">
                                                 <span class="icon">
@@ -252,179 +202,126 @@
                                                 </span>
                                                 <span>Supplementary</span>
                                             </a>
-                                        </span>
+                                  </span>
 
-                                        <!-- TODO: Replace with your GitHub repository URL -->
-                                        <span class="link-block">
-                                            <a href="https://github.com/metanthropics/DDPTECMGLGM" target="_blank"
-                                                class="external-link button is-normal is-rounded is-dark">
-                                                <span class="icon">
-                                                    <i class="fab fa-github"></i>
-                                                </span>
-                                                <span>Code</span>
-                                            </a>
-                                        </span>
-
-                                        <!-- TODO: Update with your arXiv paper ID -->
-                                        <span class="link-block">
-                                            <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                                                class="external-link button is-normal is-rounded is-dark">
-                                                <span class="icon">
-                                                    <i class="ai ai-arxiv"></i>
-                                                </span>
-                                                <span>arXiv</span>
-                                            </a>
-                                        </span>
-                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-
-            <!-- Teaser video-->
-            <section class="hero teaser">
-                <div class="container is-max-desktop">
-                    <div class="hero-body">
-                        <!-- TODO: Replace with your teaser video -->
-                        <video poster="" id="tree" autoplay controls muted loop width="800" height="500" preload="metadata">
-                            <!-- TODO: Add your video file path here -->
-                            <source src="static/videos/timelapse_birds.mp4" loop type="video/mp4"  >
-                        </video>
-                    </div>
+        <section class="hero teaser">
+            <div class="container is-max-desktop">
+                <div class="hero-body has-text-centered">
+                    <img src="static/videos/birds_high.gif" alt="Distillation Timelapse" style="border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); max-width: 100%;">
+                    <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
+                        Timelapse of the dataset distillation process, condensing thousands of bird images into a single representative "Platonic" image per class.
+                    </h2>
                 </div>
-            </section>
-            <!-- End teaser video -->
+            </div>
+        </section>
 
-            <!-- Paper abstract -->
-            <section class="section hero is-light">
-                <div class="container is-max-desktop">
-                    <div class="columns is-centered has-text-centered">
-                        <div class="column is-four-fifths">
-                            <h2 class="title is-3">Abstract</h2>
-                            <div class="content has-text-justified">
-                                <!-- TODO: Replace with your paper abstract -->
-                                <p>
-                                    The standard formulation of Dataset Distillation targets the synthesis of compact, synthetic datasets capable of training models from scratch. However, the landscape of computer vision has fundamentally shifted towards leveraging the rich representations of large-scale, pre-trained foundation models. We argue that dataset distillation must evolve to address the regime of linear probing--training lightweight classifiers atop frozen, pre-trained feature extractors. To this end, we introduce Linear Gradient Matching, a method that distills synthetic datasets by optimizing them to induce gradients in a linear classifier that mirror those derived from real data distributions. We demonstrate that a single synthetic image per class is sufficient to train linear probes that not only achieve competitive performance across a diverse array of vision backbones (CLIP, DINO-v2, EVA-02, MoCo-v3) but consistently outperform baselines constructed from real images. Motivated by the Platonic Representation Hypothesis, we further investigate the transferability of these distilled datasets. We introduce differentiable augmentations and a multi-scale pyramid parameterization that unlock robust cross-model generalization, enabling a dataset distilled via a DINO backbone to perform competitively on CLIP. Beyond efficiency, our experiments confirm that Linear Gradient Matching serves as a potent diagnostic tool for analyzing the embedding structure, alignment, and robustness of modern vision representations.
-                                </p>
-                            </div>
+        <section class="section hero is-light">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                    <div class="column is-four-fifths">
+                        <h2 class="title is-3">Abstract</h2>
+                        <div class="content has-text-justified">
+                            <p>
+                                The standard formulation of Dataset Distillation targets the synthesis of compact, synthetic datasets capable of training models from scratch. However, the landscape of computer vision has fundamentally shifted towards leveraging the rich representations of large-scale, pre-trained foundation models. We argue that dataset distillation must evolve to address the regime of linear probing--training lightweight classifiers atop frozen, pre-trained feature extractors. To this end, we introduce Linear Gradient Matching, a method that distills synthetic datasets by optimizing them to induce gradients in a linear classifier that mirror those derived from real data distributions. We demonstrate that a single synthetic image per class is sufficient to train linear probes that not only achieve competitive performance across a diverse array of vision backbones (CLIP, DINO-v2, EVA-02, MoCo-v3) but consistently outperform baselines constructed from real images. Motivated by the Platonic Representation Hypothesis, we further investigate the transferability of these distilled datasets. We introduce differentiable augmentations and a multi-scale pyramid parameterization that unlock robust cross-model generalization, enabling a dataset distilled via a DINO backbone to perform competitively on CLIP. Beyond efficiency, our experiments confirm that Linear Gradient Matching serves as a potent diagnostic tool for analyzing the embedding structure, alignment, and robustness of modern vision representations.
+                            </p>
                         </div>
                     </div>
                 </div>
-            </section>
-            <!-- End paper abstract -->
+            </div>
+        </section>
 
-
-            <!-- Image carousel -->
-            <div>
+        <div>
             <section class="hero is-small">
                 <div class="hero-body">
                     <div class="container">
-                            <div class="item">
-
+                        <div class="item">
                             <h2 class="title is-centered has-text-centered is-3">Method</h2>
-                                <!-- TODO: Replace with your research result images -->
-                                <img src="static/images/linear_dd.png" alt="First research result visualization" loading="lazy"/>
-                                <!-- TODO: Replace with description of this result -->
-                                <h2 class="subtitle has-text-centered">
-                                    We optimize our synthetic images such that they induce similar gradients as real images when training a linear classifier (W) on top of a pre-trained model (ϕ). To do this, we perform a bi-level optimization by finding the cosine distance between the real and synthetic gradients and back-propagating through the initial gradient calculation all the way to the synthetic images themselves.
-                                </h2>
-                            </div>
+                            <img src="static/images/linear_dd.png" alt="Method Overview" loading="lazy" style="display:block; margin: 0 auto; max-width: 100%;"/>
+                            <h2 class="subtitle has-text-centered" style="margin-top: 1.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                                We optimize our synthetic images such that they induce similar gradients as real images when training a linear classifier (W) on top of a pre-trained model (ϕ). To do this, we perform a bi-level optimization by finding the cosine distance between the real and synthetic gradients.
+                            </h2>
+                        </div>
                     </div>
                 </div>
             </section>
-            <section>
-                <div class="hero-body">
-                    <div class="container">
-                            <div class="item">
-                            <h2 class="title is-centered has-text-centered is-3">ImageNet-1k (1 Image/Class)</h2>
-                                <!-- Your image here -->
-                                <img src="static/images/ImageNet.png" alt="Second research result visualization" loading="lazy"/>
-                                <h2 class="subtitle has-text-centered">
-                                    After distillation, we evaluate by training new linear classifiers from scratch on the synthetic data (or real-image baselines). Our distilled images consistently out-perform all baselines across all models and datasets. Please see our paper for many more results, including cross-model performance and evaluation on more datasets, including those with fine-grained classes and spurious correlations.
-                                </h2>
-                            </div>
-                        </div>
-                    </div>
-            </section>
-                <section>
-                <div class="hero-body">
-                    <div class="container">
-                            <div class="item">
-                            <h2 class="title is-centered has-text-centered is-3">Qualitative Results</h2>
-                                <!-- Your image here -->
-                                <img src="static/images/samples_eva.png" alt="Third research result visualization" loading="lazy"/>
-                                <h2 class="subtitle has-text-centered">
-                                    Pictured below are a selection of ImageNet-100 classes distilled using different backbone models. The distilled images look quite different for each backbone due to each model's unique set of biases. Please see our Image Gallery to browse all distilled images.
-                                </h2>
-                            </div>
-                        </div>
-                    </div>
-            </section>
-                <section>
-                <div class="hero-body">
-                    <div class="container">
-                            <div class="item">
-                            <h2 class="title is-centered has-text-centered is-3">Other Datasets Preview</h2>
-                                <!-- Your image here -->
-                                <img src="static/images/dogs.png" alt="Fourth research result visualization" loading="lazy" class="is-centered" />
-                                <h2 class="subtitle has-text-centered">
-                                    Here we show a preview of our other datasets distilled with CLIP. Our method excels at fine-grained visual classification datasets such as these since the learned images can capture far more discriminative detail than any one real image. Please see our Image Gallery to browse the full distilled datasets from all models (CLIP, DINO-v2, EVA-02, and MoCo-v3).
-                                </h2>
-                            </div>
-                        </div>
-                    </div>
-            </section>
-            <!-- End image carousel -->
-            </div>
 
-
-            <!--BibTex citation -->
-            <section class="section" id="BibTeX">
-                <div class="container is-max-desktop content">
-                    <div class="bibtex-header">
-                        <h2 class="title">BibTeX</h2>
-                        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
-                            <i class="fas fa-copy"></i>
-                            <span class="copy-text">Copy</span>
-                        </button>
-                    </div>
-                    <pre id="bibtex-code"><code>    @inproceedings{ metanthropic2025lineargradmatch,
-                    title={Dataset Distillation for the Pre-Training Era: Cross-Model Generalization via Linear Gradient Matching.},
-                    author={Metanthropic and Ekjot Singh},
-                    year={2025},
-                    url={https://your-domain.com/your-project-page}
-                    }</code></pre>
-                </div>
-            </section>
-            <!--End BibTex citation -->
-
-
-            <footer class="footer">
+            <section class="section">
                 <div class="container">
-                    <div class="columns is-centered">
-                        <div class="column is-8">
-                            <div class="content">
+                    <div class="item">
+                        <h2 class="title is-centered has-text-centered is-3">ImageNet-1k Results (1 Image/Class)</h2>
+                        <img src="static/images/ImageNet.png" alt="ImageNet Results" loading="lazy" style="display:block; margin: 0 auto; max-width: 100%;"/>
+                        <h2 class="subtitle has-text-centered" style="margin-top: 1.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                            After distillation, we evaluate by training new linear classifiers from scratch on the synthetic data. Our distilled images consistently out-perform baselines (like class centroids) across all models (CLIP, DINO, EVA, MoCo).
+                        </h2>
+                    </div>
+                </div>
+            </section>
 
-                                <p>
-                                    This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>
-                                    <br>
-                                    &copy; 2025 Metanthropic Labs
-                                </p>
+            <section class="section">
+                <div class="container">
+                    <div class="item">
+                        <h2 class="title is-centered has-text-centered is-3">Qualitative Results</h2>
+                        <img src="static/images/samples_eva.png" alt="Sample Images" loading="lazy" style="display:block; margin: 0 auto; max-width: 100%;"/>
+                        <h2 class="subtitle has-text-centered" style="margin-top: 1.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                            Pictured below are a selection of ImageNet-100 classes distilled using different backbone models. Each backbone induces a unique "Platonic" representation—some focus on texture, others on shape or background context.
+                        </h2>
+                    </div>
+                </div>
+            </section>
 
-                            </div>
+            <section class="section">
+                <div class="container">
+                    <div class="item">
+                        <h2 class="title is-centered has-text-centered is-3">Other Datasets Preview</h2>
+                        <img src="static/images/dogs.png" alt="Fine Grained Results" loading="lazy" style="display:block; margin: 0 auto; max-width: 100%;"/>
+                        <h2 class="subtitle has-text-centered" style="margin-top: 1.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                            A preview of our fine-grained classification results. Our method excels here, as the learned images can capture far more discriminative detail than any single real image.
+                        </h2>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <section class="section" id="BibTeX">
+            <div class="container is-max-desktop content">
+                <div class="bibtex-header">
+                    <h2 class="title">BibTeX</h2>
+                    <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+                        <i class="fas fa-copy"></i>
+                        <span class="copy-text">Copy</span>
+                    </button>
+                </div>
+                <pre id="bibtex-code"><code>@inproceedings{metanthropic2025lineargradmatch,
+    title={Dataset Distillation for the Pre-Training Era: Cross-Model Generalization via Linear Gradient Matching.},
+    author={Metanthropic and Ekjot Singh},
+    year={2025},
+    url={https://metanthropic.vercel.app/research/dataset-distillation}
+}</code></pre>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="columns is-centered">
+                    <div class="column is-8">
+                        <div class="content has-text-centered">
+                            <p>
+                                &copy; 2025 Metanthropic Labs
+                            </p>
                         </div>
                     </div>
                 </div>
-            </footer>
+            </div>
+        </footer>
 
-            <!-- Statcounter tracking code -->
-
-            <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
-
-            <!-- End of Statcounter Code -->
-
-    </body>
+    </main>
+</body>
 </html>
