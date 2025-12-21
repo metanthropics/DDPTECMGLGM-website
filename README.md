@@ -3,7 +3,7 @@
 **[Metanthropic](https://metanthropic.vercel.app/)**, **[Ekjot Singh](https://www.linkedin.com/in/ekjot-singh-153110268/)**
 
 
-[**[Metanthropic]**](https://metanthropic.vercel.app/) | [**[Project Page]**](https://metanthropics.github.io/DDPTECMGLGM-website/) | [**[Paper]**](https://metanthropic.vercel.app/papers/dataset-distillation.pdf) | [**[Code]**](https://github.com/metanthropics/DDPTECMGLGM)
+[**[Metanthropic]**](https://metanthropic.vercel.app/) | [**[Project Page]**](https://metanthropic.github.io/DDPTECMGLGM-website/) | [**[Paper]**](https://metanthropic.vercel.app/papers/dataset-distillation.pdf) | [**[Code]**](https://github.com/metanthropic/DDPTECMGLGM)
 
 ---
 
@@ -29,7 +29,7 @@ This repository contains the source code for the project website. To preview it 
 
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/metanthropics/DDPTECMGLGM-website.git](https://github.com/metanthropics/DDPTECMGLGM-website.git)
+   git clone [https://github.com/metanthropic/DDPTECMGLGM-website.git](https://github.com/metanthropic/DDPTECMGLGM-website.git)
    ```
 2. Navigate to the directory and start a local server (using Python 3):
     ```bash
